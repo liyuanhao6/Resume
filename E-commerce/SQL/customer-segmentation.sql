@@ -15,14 +15,14 @@ CREATE TABLE new_ecommerce
 SELECT DISTINCT *
 FROM ecommerce;
 -- 3. 缺失值处理
-SELECT  SUM(CASE WHEN CustomerID IS NULL THEN 1 ELSE 0 END)   AS "客户编号",
-        SUM(CASE WHEN InvoiceNo IS NULL THEN 1 ELSE 0 END )   AS "发票编号",
-        SUM(CASE WHEN StockCode IS NULL THEN 1 ELSE 0 END )   AS "产品编号",
-        SUM(CASE WHEN Quantity IS NULL THEN 1 ELSE 0 END )    AS "发票编号",
-        SUM(CASE WHEN InvoiceDate IS NULL THEN 1 ELSE 0 END ) AS "数量",
-        SUM(CASE WHEN UnitPrice IS NULL THEN 1 ELSE 0 END )   AS "单价",
-        SUM(CASE WHEN Description IS NULL THEN 1 ELSE 0 END ) AS "产品描述",
-        SUM(CASE WHEN Country IS NULL THEN 1 ELSE 0 END )     AS "国家"
+SELECT  SUM(CASE WHEN CustomerID IS NULL THEN 1 ELSE 0 END )  AS `客户编号`,
+        SUM(CASE WHEN InvoiceNo IS NULL THEN 1 ELSE 0 END )   AS `发票编号`,
+        SUM(CASE WHEN StockCode IS NULL THEN 1 ELSE 0 END )   AS `产品编号`,
+        SUM(CASE WHEN Quantity IS NULL THEN 1 ELSE 0 END )    AS `发票编号`,
+        SUM(CASE WHEN InvoiceDate IS NULL THEN 1 ELSE 0 END ) AS `数量`,
+        SUM(CASE WHEN UnitPrice IS NULL THEN 1 ELSE 0 END )   AS `单价`,
+        SUM(CASE WHEN Description IS NULL THEN 1 ELSE 0 END ) AS `产品描述`,
+        SUM(CASE WHEN Country IS NULL THEN 1 ELSE 0 END )     AS `国家`
 FROM new_ecommerce;
 
 DELETE
@@ -33,10 +33,10 @@ SELECT  MAX(InvoiceDate),
         MIN(InvoiceDate)
 FROM new_ecommerce;
 
-SELECT  MAX(UnitPrice) AS "最高价格",
-        MIN(UnitPrice) AS "最低价格",
-        MAX(Quantity)  AS "最高销量",
-        MIN(Quantity)  AS "最低销量"
+SELECT  MAX(UnitPrice) AS `最高价格`,
+        MIN(UnitPrice) AS `最低价格`,
+        MAX(Quantity)  AS `最高销量`,
+        MIN(Quantity)  AS `最低销量`
 FROM new_ecommerce;
 
 DELETE
