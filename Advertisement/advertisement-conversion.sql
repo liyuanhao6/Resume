@@ -63,15 +63,15 @@ SELECT  xyz_campaign_id                                          AS `广告活�
 FROM new_advertisement
 GROUP BY xyz_campaign_id;
 -- 8. 年龄和广告
-SELECT  xyz_campaign_id                                         AS `广告活动`,
-        age                                                     AS `年龄`,
-        SUM(Impressions)                                        AS `展示量`,
-        SUM(Clicks)                                             AS `点击量`,
-        SUM(Total_Conversion)                                   AS `激活量`,
-        SUM(Approved_Conversion)                                AS `转化量`,
-        ROUND(SUM(Clicks)/SUM(Impressions),6)                   AS `点击率`,
-        ROUND(SUM(Total_Conversion)/SUM(Clicks),2)              AS `激活率`,
-        ROUND(SUM(Approved_Conversion)/SUM(Total_Conversion),2) AS `转化率`
+SELECT  xyz_campaign_id                                              AS `广告活动`,
+        age                                                          AS `年龄`,
+        SUM(Impressions)                                             AS `展示量`,
+        SUM(Clicks)                                                  AS `点击量`,
+        SUM(Total_Conversion)                                        AS `激活量`,
+        SUM(Approved_Conversion)                                     AS `转化量`,
+        ROUND(SUM(Clicks) / SUM(Impressions), 2)                     AS `点击率`,
+        ROUND(SUM(Total_Conversion) / SUM(Clicks), 2)                AS `激活率`,
+        ROUND(SUM(Approved_Conversion) / SUM(Total_Conversion), 2)   AS `转化率`
 FROM new_advertisement
 GROUP BY xyz_campaign_id,
          age
@@ -79,15 +79,15 @@ ORDER BY 点击率 DESC,
          激活率 DESC,
          转化率 DESC;
 -- 9. 性别和广告
-SELECT  xyz_campaign_id                                         AS `广告活动`,
-        gender                                                  AS `性别`,
-        SUM(Impressions)                                        AS `展示量`,
-        SUM(Clicks)                                             AS `点击量`,
-        SUM(Total_Conversion)                                   AS `激活量`,
-        SUM(Approved_Conversion)                                AS `转化量`,
-        ROUND(SUM(Clicks)/SUM(Impressions),6)                   AS `点击率`,
-        ROUND(SUM(Total_Conversion)/SUM(Clicks),2)              AS `激活率`,
-        ROUND(SUM(Approved_Conversion)/SUM(Total_Conversion),2) AS `转化率`
+SELECT  xyz_campaign_id                                              AS `广告活动`,
+        gender                                                       AS `性别`,
+        SUM(Impressions)                                             AS `展示量`,
+        SUM(Clicks)                                                  AS `点击量`,
+        SUM(Total_Conversion)                                        AS `激活量`,
+        SUM(Approved_Conversion)                                     AS `转化量`,
+        ROUND(SUM(Clicks) / SUM(Impressions), 2)                     AS `点击率`,
+        ROUND(SUM(Total_Conversion) / SUM(Clicks), 2)                AS `激活率`,
+        ROUND(SUM(Approved_Conversion) / SUM(Total_Conversion), 2)   AS `转化率`
 FROM new_advertisement
 GROUP BY xyz_campaign_id,
          gender
@@ -95,15 +95,15 @@ ORDER BY 点击率 DESC,
          激活率 DESC,
          转化率 DESC;
 -- 10. 兴趣和广告
-SELECT  xyz_campaign_id                                         AS `广告活动`,
-        interest                                                AS `兴趣`,
-        SUM(Impressions)                                        AS `展示量`,
-        SUM(Clicks)                                             AS `点击量`,
-        SUM(Total_Conversion)                                   AS `激活量`,
-        SUM(Approved_Conversion)                                AS `转化量`,
-        ROUND(SUM(Clicks)/SUM(Impressions),6)                   AS `点击率`,
-        ROUND(SUM(Total_Conversion)/SUM(Clicks),2)              AS `激活率`,
-        ROUND(SUM(Approved_Conversion)/SUM(Total_Conversion),2) AS `转化率`
+SELECT  xyz_campaign_id                                              AS `广告活动`,
+        interest                                                     AS `兴趣`,
+        SUM(Impressions)                                             AS `展示量`,
+        SUM(Clicks)                                                  AS `点击量`,
+        SUM(Total_Conversion)                                        AS `激活量`,
+        SUM(Approved_Conversion)                                     AS `转化量`,
+        ROUND(SUM(Clicks) / SUM(Impressions), 2)                     AS `点击率`,
+        ROUND(SUM(Total_Conversion) / SUM(Clicks), 2)                AS `激活率`,
+        ROUND(SUM(Approved_Conversion) / SUM(Total_Conversion), 2)   AS `转化率`
 FROM new_advertisement
 GROUP BY xyz_campaign_id,
         interest
